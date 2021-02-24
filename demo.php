@@ -1,10 +1,16 @@
 <?php 
-    $nom = 'Doe';
-    $prenom = 'John';
+$classe = [
+    [
+    'nom' => 'Doe',
+    'prenom' => 'John', 
+    'notes' => [20, 15, 10]
+    ],
+    [
+    'nom' => 'Doe',
+    'prenom' => 'Jane', 
+    'notes' => [16, 12, 17]
+    ]
+];
 
-    $note1 = 10;
-    $note2 = 20;
-    $moyenne = ($note1 + $note2) / 2;
-
-    echo "Bonjour $prenom $nom vous avez eu $moyenne de moyenne";
+echo $classe[1]['notes'][1];
 ?>
