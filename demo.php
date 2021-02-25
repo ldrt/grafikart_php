@@ -1,5 +1,7 @@
 <?php 
-function repondre ($question) {
+declare(strict_types=1); // typage strict
+
+function repondre (string $question) : bool {
     while (true) {
         $reponse = readline($question . "(o)ui/(n)on : ");
         if($reponse === 'o') {
@@ -10,7 +12,7 @@ function repondre ($question) {
     }
 }
 
-function demander_creneaux ($phrase = 'Veuillez entrer un creneau') {
+function demander_creneaux (string $phrase = 'Veuillez entrer un creneau') : array {
     while (true) {
         echo $phrase . "\n";
         while (true) {
