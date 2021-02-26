@@ -1,4 +1,10 @@
 <?php 
+function dump_pre($content) {
+    echo '<pre>';
+    var_dump($content);
+    echo '</pre>';
+}
+
 function nav_item(string $link, string $title, string $linkClass = ''): string {
     $class = 'nav-link';
     if ($_SERVER['SCRIPT_NAME'] == $link) {
@@ -11,13 +17,14 @@ function nav_item(string $link, string $title, string $linkClass = ''): string {
 HTML;
 }
 
-function nav_menu (string $linkClass ='') : string {
+function nav_menu(string $linkClass ='') : string {
     return 
         nav_item('/index.php', 'Home', $linkClass) . 
+        nav_item('/menu.php', 'Menu', $linkClass) . 
         nav_item('/contact.php', 'Contact', $linkClass);
 }
 
-function select (string $name, $value, array $options) : string {
+function select(string $name, $value, array $options) : string {
     $html_options = [];
     foreach ($options as $key => $option) {
         $attributes = $key == $value ? 'selected' : '';
@@ -26,7 +33,7 @@ function select (string $name, $value, array $options) : string {
     return "<select name='$name' class='form-control'>" . implode($html_options) . '</select>';
 }
 
-function creneaux_html (array $creneaux) : string {
+function creneaux_html(array $creneaux) : string {
     if (empty($creneaux)) {
         return 'Fermé';
     }
@@ -37,7 +44,7 @@ function creneaux_html (array $creneaux) : string {
     return 'Ouvert ' . implode(' et ', $h);
 }
 
-function in_creneaux (int $heure, array $creneaux) : bool {
+function in_creneaux(int $heure, array $creneaux) : bool {
     foreach ($creneaux as $creneau) {
         if ($heure >= $creneau[0] && $heure < $creneau[1]) {
             return true;

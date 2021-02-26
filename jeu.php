@@ -13,7 +13,7 @@ if(isset($_POST['chiffre'])){
         $succes="Bravo, vous avez bien deviné le chiffre $aDeviner";
     }
 }
-require 'header.php';
+require 'elements/header.php';
 ?>
 
 <main class="container">

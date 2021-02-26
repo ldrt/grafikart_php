@@ -1,6 +1,6 @@
 <?php 
 declare(strict_types=1);
-require 'header.php'; 
+require 'elements/header.php'; 
 ?>
 
 
@@ -13,4 +13,4 @@ require 'header.php';
 
 </main><!-- /.container -->
 
-<?php require 'footer.php'; ?>
+<?php require 'elements/footer.php'; ?>

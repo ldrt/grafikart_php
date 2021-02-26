@@ -1,5 +1,5 @@
 <?php
-require_once 'functions_site.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions_site.php';
 ?>
 
 <!doctype html>
