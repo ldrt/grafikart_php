@@ -24,15 +24,6 @@ function nav_menu(string $linkClass ='') : string {
         nav_item('/contact.php', 'Contact', $linkClass);
 }
 
-function select(string $name, $value, array $options) : string {
-    $html_options = [];
-    foreach ($options as $key => $option) {
-        $attributes = $key == $value ? 'selected' : '';
-        $html_options[] = "<option value='$key' $attributes>$option</option>";
-    }
-    return "<select name='$name' class='form-control'>" . implode($html_options) . '</select>';
-}
-
 function creneaux_html(array $creneaux) : string {
     if (empty($creneaux)) {
         return 'Fermé';
