@@ -1,7 +1,8 @@
 <?php
 $erreur = null;
+$hash = password_hash('Doe', PASSWORD_DEFAULT, ['cost' => 12]);
 if(!empty($_POST['pseudo'] && !empty($_POST['mdp']))) {
-    if ($_POST['pseudo'] === 'John' && $_POST['mdp'] === 'Doe') {
+    if ($_POST['pseudo'] === 'John' && password_verify($_POST['mdp'], $hash)) {
         session_start();
         $_SESSION['connecte'] = 1;
         header('Location: /dashboard.php');
