@@ -1,6 +1,7 @@
 <?php 
-require 'elements/header.php'; 
-require 'functions/compteur.php'; 
+require_once 'functions/auth.php'; 
+forcer_utilisateur_connecte();
+require_once 'functions/compteur.php'; 
 $annee = (int) date('Y');
 $annee_selection = empty($_GET['annee']) ? null : (int) $_GET['annee'];
 $mois = [
@@ -24,6 +25,7 @@ if($annee_selection && $mois_selection) {
 } else {
     $total = nombre_vues();
 }
+require_once 'elements/header.php'; 
 ?>
 
 <main class="container">
