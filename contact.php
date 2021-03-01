@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require 'elements/header.php'; 
 require_once 'data/config.php'; 
 require_once 'functions_site.php'; 
@@ -13,6 +14,10 @@ $color = $ouvert ? 'green' : 'red';
 <main class="container">
     <div class="row">
         <div class="col-md-8">
+            <h2>Debug</h2>
+            <pre>
+                <?php var_dump($_SESSION); ?>
+            </pre>
             <h2>Nous contacter</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis qui vel consectetur, nihil, cumque maiores itaque est, quasi architecto impedit mollitia soluta sequi deserunt. Unde hic ad id tenetur omnis.
